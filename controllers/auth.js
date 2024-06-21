@@ -122,3 +122,14 @@ export const verifyOTP = async (req, res) => {
 
     }
 }
+
+export const getAll = async (req, res) => {
+    try {
+        const users = await UserModel.find({});
+        res.status(200).json(users);
+    } catch (error) {
+        res.json({
+            message: "Something went wrong"
+        })
+    }
+}
