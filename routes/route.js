@@ -1,12 +1,16 @@
 import express from 'express'
 import {signup, getAll, signin, verifyOTP} from '../controllers/auth.js'
+import upload from "../utils/multer.js";
+import { imageUpload } from "../controllers/upload.js";
+import { cloudinaryUploader, cloudinaryConfig  } from "../utils/cloudinary.js";
 const router = express.Router()
-
+cloudinaryConfig();
 
 router.post("/signup", signup)
 router.get("/getAll", getAll)
 router.post("/signin", signin)
 router.post("/verifyOTP", verifyOTP)
+router.post("/imageupload", upload.single("image"), imageUpload)
 
 
 router.get("/", (req, res) => {
