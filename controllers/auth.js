@@ -7,7 +7,7 @@ import OTPModel from "../models/OTPSchema.js";
 
 export const signup = async (req, res) => {
 
-    const { user_name, email, password } = req.body;
+    const { user_name, email, password, imageURL } = req.body;
     try {
         const existingUser = await UserModel.findOne({ email });
         if (existingUser)

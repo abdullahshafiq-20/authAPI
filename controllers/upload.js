@@ -19,9 +19,6 @@ export const imageUpload = async (request, response) => {
             message: "Image upload successfully!"
         })
     } catch (error) {
-        console.log(process.env.CLOUDINARY_API_KEY)
-        console.log(process.env.CLOUDINARY_SECRET_KEY)
-        console.log(process.env.CLOUDINARY_CLOUD_NAME)
         response.json({
             data:
                 []
