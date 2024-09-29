@@ -30,4 +30,4 @@ mongoose.connect(uri)
     })
     .catch(err => console.log(err))
 
-    app.use(route)
+app.use(route)
